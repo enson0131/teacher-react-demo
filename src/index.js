@@ -2,25 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Router, Route, Link } from 'react-router';
+import LearnDefineProperty from './pages/LearnDefineProperty';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 // import reportWebVitals from './reportWebVitals';
 
-const routeConfig = [
-  { 
-    path: '/',
-    component: App,
-  },
+const routeConfig = createBrowserRouter([
   { 
     path: '/defineproperty',
-    component: LearnDefineProperty,
-  }
-]
+    element: <LearnDefineProperty />,
+  },
+  { 
+    path: '/',
+    element: <App />,
+  },
+]);
 // React 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <Router routes={routeConfig} />
-  // </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={routeConfig} />
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

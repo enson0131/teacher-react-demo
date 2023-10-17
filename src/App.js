@@ -23,7 +23,7 @@ function App() {
       </header>
 
       {/* <LearnUseState2 /> */}
-      <LearnUseContext />
+      {/* <LearnUseContext /> */}
     </div>
   );
 }
