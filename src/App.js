@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import LearnUseState1 from './pages/LearnUseState1/index';
+import LearnUseState2 from './pages/LearnUseState2/index';
+import LearnUseContext from './pages/LearnUseContext/index';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
+
+      {/* <LearnUseState2 /> */}
+      <LearnUseContext />
     </div>
   );
 }
