@@ -4,32 +4,34 @@ import './index.css';
 import App from './App';
 import LearnDefineProperty from './pages/LearnDefineProperty';
 import LearnProxy from './pages/LearnProxy';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LearnReactOptimize from './pages/LearnReactOptimize';
 // import reportWebVitals from './reportWebVitals';
 
 const routeConfig = createBrowserRouter([
-  { 
+  {
+    path: '/LearnReactOptimize',
+    element: <LearnReactOptimize />,
+  },
+  {
     path: '/defineproperty',
     element: <LearnDefineProperty />,
   },
-  { 
+  {
     path: '/proxy',
     element: <LearnProxy />,
   },
-  { 
+  {
     path: '/',
     element: <App />,
   },
 ]);
-// React 
+// React
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={routeConfig} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

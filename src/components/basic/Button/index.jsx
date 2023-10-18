@@ -1,8 +1,10 @@
-import { Button } from 'antd'
+import React from 'react';
+import { Button } from 'antd';
 
 const BasicButton = (props) => {
-    return <Button {...props}></Button>
-}
+  return <Button {...props}></Button>;
+};
 
-
-export default BasicButton
+export default React.memo(BasicButton, (oldProps, newProps) => {
+  return oldProps === newProps; // true - 不更新 false - 更新
+});

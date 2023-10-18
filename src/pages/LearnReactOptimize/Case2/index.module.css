@@ -1,0 +1,16 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 500px;
+  height: 500px;
+}
+
+div {
+  text-align: center;
+}
