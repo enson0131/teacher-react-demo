@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import LearnDefineProperty from './pages/LearnDefineProperty';
+import LearnProxy from './pages/LearnProxy';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,6 +14,10 @@ const routeConfig = createBrowserRouter([
   { 
     path: '/defineproperty',
     element: <LearnDefineProperty />,
+  },
+  { 
+    path: '/proxy',
+    element: <LearnProxy />,
   },
   { 
     path: '/',
