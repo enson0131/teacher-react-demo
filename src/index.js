@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import LearnDefineProperty from './pages/LearnDefineProperty';
-import LearnProxy from './pages/LearnProxy';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+// import LazyBoundary from './components/basic/Suspense';
+import LearnProxy from './pages/LearnProxy';
+import LearnDefineProperty from './pages/LearnDefineProperty';
 import LearnReactOptimize from './pages/LearnReactOptimize';
+
 // import reportWebVitals from './reportWebVitals';
+// const LearnProxy = lazy(() => import('./pages/LearnProxy'));
+// const LearnDefineProperty = lazy(() => import('./pages/LearnDefineProperty'));
+// const LearnReactOptimize = lazy(() => import('./pages/LearnReactOptimize'));
 
 const routeConfig = createBrowserRouter([
   {
     path: '/LearnReactOptimize',
-    element: <LearnReactOptimize />,
+    element: LearnReactOptimize,
   },
   {
     path: '/defineproperty',
-    element: <LearnDefineProperty />,
+    element: LearnDefineProperty,
   },
   {
     path: '/proxy',
-    element: <LearnProxy />,
+    element: LearnProxy,
   },
   {
     path: '/',
     element: <App />,
   },
 ]);
+
 // React
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
