@@ -28,7 +28,7 @@ function Case2() {
   }, [count]);
 
   return (
-    <div className={styles.page}>
+    <div className={styles.case2page}>
       <div className={styles.content}>
         <div>姓名：{userInfo.userName}</div>
         <div>年龄：{userInfo.age}</div>

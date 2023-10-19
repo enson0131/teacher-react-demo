@@ -1,0 +1,17 @@
+.page {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.inputClass {
+  margin-bottom: 12px;
+}
+
+.textAreaClass {
+  margin-bottom: 12px;
+}
+
+.btnClass {
+}

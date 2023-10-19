@@ -15,7 +15,7 @@ function Case1() {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [count]);
 
   return <div>{count}</div>;
 }

@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LearnProxy from './pages/LearnProxy';
 import LearnDefineProperty from './pages/LearnDefineProperty';
 import LearnReactOptimize from './pages/LearnReactOptimize';
+import LearnCommentList from './pages/LearnCommentList';
 
 // import reportWebVitals from './reportWebVitals';
 // const LearnProxy = lazy(() => import('./pages/LearnProxy'));
@@ -18,15 +19,19 @@ import LearnReactOptimize from './pages/LearnReactOptimize';
 const routeConfig = createBrowserRouter([
   {
     path: '/LearnReactOptimize',
-    element: LearnReactOptimize,
+    element: <LearnReactOptimize />,
   },
   {
-    path: '/defineproperty',
-    element: LearnDefineProperty,
+    path: '/LearnCommentList',
+    element: <LearnCommentList />,
   },
   {
     path: '/proxy',
-    element: LearnProxy,
+    element: <LearnProxy />,
+  },
+  {
+    path: '/defineproperty',
+    element: <LearnDefineProperty />,
   },
   {
     path: '/',
