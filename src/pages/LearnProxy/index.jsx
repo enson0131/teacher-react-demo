@@ -7,52 +7,54 @@ function LearnProxy() {
    */
 
   const a = {
-    // bar: { a: 1 }
+    bar: { a: 1 },
   };
 
-  // const reactive = (originObj) => {
-  //   if (typeof originObj !== 'object' || originObj === null) {
-  //     return originObj
-  //   }
-
-  //   return new Proxy(originObj, {
-  //     get: (obj, prop) => {
-  //       console.log(`监听到 get 方法`)
-  //       return reactive(obj[prop]);
-  //     },
-  //     set: (obj, prop, value) => {
-  //       console.log(`监听到 set 方法`)
-  //       // The default behavior to store the value
-  //       obj[prop] = value;
-  
-  //       // 表示成功
-  //       return true;
-  //     }
-  //   })
-  // }
-
-  const p = new Proxy(a, {
-    get: (obj, prop) => {
-      console.log(`监听到 get 方法`)
-      return (obj[prop]);
-    },
-    set: (obj, prop, value) => {
-      console.log(`监听到 set 方法`)
-      // The default behavior to store the value
-      obj[prop] = value;
-
-      // 表示成功
-      return true;
+  const reactive = (originObj) => {
+    if (typeof originObj !== 'object' || originObj === null) {
+      return originObj;
     }
-  })
+
+    return new Proxy(originObj, {
+      get: (obj, prop) => {
+        console.log(`监听到 get 方法`, prop);
+        return reactive(obj[prop]);
+      },
+      set: (obj, prop, value) => {
+        console.log(`监听到 set 方法`, prop);
+        // The default behavior to store the value
+        obj[prop] = value;
+
+        // 表示成功
+        return true;
+      },
+    });
+  };
+
+  const p = reactive(a);
+
+  // const p = new Proxy(a, {
+  //   get: (obj, prop) => {
+  //     console.log(`监听到 get 方法`);
+  //     return obj[prop];
+  //   },
+  //   set: (obj, prop, value) => {
+  //     console.log(`监听到 set 方法`);
+  //     // The default behavior to store the value
+  //     obj[prop] = value;
+
+  //     // 表示成功
+  //     return true;
+  //   },
+  // });
 
   const handleClick = () => {
-    p.name = 2;
-    console.log(p.name) 
-    
-    // p.bar.a = 2;
-    // console.log(p.bar.a);
-  }
+    // p.name = 2;
+    // console.log(p.name);
+
+    p.bar.a = 2; // 会触发一次 get 方法, 一次 set 方法
+    console.log(p.bar.a);
+  };
   return (
     <div>
       <Button onClick={handleClick}>Proxy 按钮</Button>
